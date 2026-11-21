@@ -1,7 +1,9 @@
 # Notas para la sección 4 del informe: modelos de ML
 
 Fuente de todos los números: `etapa2/modelos/metricas.json`, generado por `etapa2/entrenar_modelos.py` (18/11/2026).
-Los gráficos se arman en la fase 5, cuando sepamos cuánto espacio queda en las 10 páginas.
+Gráficos (21/11): `graficos/fig3_attrition.png` (curva ROC de los dos modelos en test e importancia y sentido de
+cada variable) y `graficos/fig4_ventas.png` (ventas reales y del modelo en las 40 semanas de test, Aires y Electro
+en AMBA). Se regeneran con `python armar_graficos.py` desde `informe/graficos/`.
 
 ## Modelo de attrition (empleados.csv)
 

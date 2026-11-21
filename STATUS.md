@@ -14,8 +14,8 @@ que no hay descuento hasta el 6/12, pero planificamos para el 29/11.
 
 | # | Entregable | Estado |
 |---|---|---|
-| E1 | `etapa1/` y `etapa2/`, cada una con `tools.py`, `agentes.py`, `main.py` (+ módulos extra, p. ej. el script que entrena los modelos). Cada una corre sola con `streamlit run main.py` desde su carpeta. `RUTA_DATOS` ajustado | ⬜ |
-| E2 | `contenidos_aprobados.csv`: las 8 filas originales + las piezas de las consultas de prueba de **las dos etapas** | ⬜ |
+| E1 | `etapa1/` y `etapa2/`, cada una con `tools.py`, `agentes.py`, `main.py` (+ módulos extra, p. ej. el script que entrena los modelos). Cada una corre sola con `streamlit run main.py` desde su carpeta. `RUTA_DATOS` ajustado | ✅ código (rutas relativas a cada carpeta); falta la validación de la etapa 2 en la app |
+| E2 | `contenidos_aprobados.csv`: las 8 filas originales + las piezas de las consultas de prueba de **las dos etapas** | ✅ 21/11 en la raíz, con `consolidar_csv.py` (15 filas: 8 + 4 de la etapa 1 + 3 de la etapa 2, la última de la prueba de Emiliano en la app). Volver a correrlo si se aprueban más piezas |
 | E3 | Informe en PDF que cubre las dos etapas (ver E3 abajo) | ⬜ |
 | E4 | `TP_IAGen_2026_APELLIDOS.zip` con `etapa1/`, `etapa2/`, el CSV y el PDF; **sin `.env` ni venv**. Lo sube un solo integrante al campus, en "Entregar TP" | ⬜ |
 
@@ -23,21 +23,21 @@ La etapa 1 se evalúa aparte: no alcanza con que la etapa 2 la reutilice.
 
 ### E3: contenido obligatorio del informe
 
-- [ ] Diagrama de la arquitectura de cada etapa
-- [ ] Qué agentes hay, qué tools y datos tiene cada uno, y por qué
-- [ ] Cómo se entrenaron y validaron los dos modelos, y qué se encontró al interpretarlos
-- [ ] Decisiones de diseño y alternativas descartadas
-- [ ] Cómo se implementaron los límites de alcance
-- [ ] Tabla de tiempos de respuesta de la etapa 2, con la explicación de las diferencias
+- [x] Diagrama de la arquitectura de cada etapa (el de la etapa 2 actualizado el 21/11 con los controles nuevos)
+- [x] Qué agentes hay, qué tools y datos tiene cada uno, y por qué
+- [x] Cómo se entrenaron y validaron los dos modelos, y qué se encontró al interpretarlos (+ figuras 3 y 4, 21/11)
+- [x] Decisiones de diseño y alternativas descartadas (tablas 2 y 4 con las decisiones hasta el 21/11)
+- [x] Cómo se implementaron los límites de alcance (con el resultado de la consulta 11)
+- [x] Tabla de tiempos de respuesta de la etapa 2, con la explicación de las diferencias (tabla 9)
 - [ ] Si se hace A2A: qué cambió
-- [ ] Limitaciones conocidas
-- [ ] Formato: A4, letra de 11 pt o más, máximo 10 páginas sin contar la carátula; anexo opcional de hasta 5
+- [x] Limitaciones conocidas
+- [ ] Formato: A4, letra de 11 pt o más, máximo 10 páginas sin contar la carátula; anexo opcional de hasta 5. **Al 21/11 el borrador tiene ~6.900 palabras y la vista previa da 17 páginas: hay que recortar después de que Emiliano lo lea**
 - [ ] Carátula con nombres completos y legajos de los 4 integrantes (**pendiente: datos del grupo**)
 
 ## Requisitos
 
 ### Transversal (pág. 2)
-- [ ] Contrato: `responder(pregunta) -> {"respuesta": str, "detalle": [{"titulo", "contenido"}]}`
+- [x] Contrato: `responder(pregunta) -> {"respuesta": str, "detalle": [{"titulo", "contenido"}]}`
 
 ### Etapa 1: Marketing (págs. 3-4)
 - [x] 1.1 Pipeline de **3 agentes en secuencia**; justificar qué hace cada uno
@@ -52,20 +52,20 @@ La etapa 1 se evalúa aparte: no alcanza con que la etapa 2 la reutilice.
 - [x] 1.10 Consultas de prueba 1 a 4 resueltas y guardadas en el CSV
 
 ### Etapa 2: RRHH y Supply chain (págs. 4-6)
-- [ ] 2.1 Un **único punto de entrada** que decide a quién delegar
-- [ ] 2.2 Estructura multiagente **distinta** a la de la etapa 1
-- [ ] 2.3 Marketing de la etapa 1 integrado como un área más
-- [ ] 2.4 RAG sobre `manual_politicas_rrhh.pdf`, índice persistido, nunca inventar políticas
+- [x] 2.1 Un **único punto de entrada** que decide a quién delegar
+- [x] 2.2 Estructura multiagente **distinta** a la de la etapa 1
+- [x] 2.3 Marketing de la etapa 1 integrado como un área más
+- [x] 2.4 RAG sobre `manual_politicas_rrhh.pdf`, índice persistido, nunca inventar políticas
 - [x] 2.5 Modelo de **attrition** propio (`empleados.csv`): logística, AUC test 0,81 (18/11)
 - [x] 2.6 Modelo de **ventas** propio (`ventas.csv`: categoría, región, temperatura, lluvia, cobre): lineal-log, MAPE test 12 % (18/11)
-- [ ] 2.7 Para cada modelo, tools para **predecir**, **interpretar** (qué variables y en qué sentido) y **simular**
-- [ ] 2.8 Tools **lo más generales posible** (una de simulación con variable y cambio, no una por variable)
-- [ ] 2.9 Agentes SQL (`SQLDatabaseToolkit`) para las preguntas exploratorias; **base en solo lectura**
-- [ ] 2.10 MCP `mcp_weather_server` con `MultiServerMCPClient`; salida resumida; pronóstico → ventas de la semana que viene. Si falla: respaldo con el CSV, documentado en el informe
-- [ ] 2.11 Mínimo privilegio: cada agente accede solo a los datos y documentos de su área
-- [ ] 2.12 Rechazo de las preguntas fuera de alcance
-- [ ] 2.13 Tiempo de punta a punta con `time.perf_counter()`, visible en el detalle de la app
-- [ ] 2.14 Consultas de prueba 1 a 8 + **al menos 2 propias** (p. ej., que combinen especialistas o un caso límite)
+- [x] 2.7 Para cada modelo, tools para **predecir**, **interpretar** (qué variables y en qué sentido) y **simular**
+- [x] 2.8 Tools **lo más generales posible** (una de simulación con variable y cambio, no una por variable)
+- [x] 2.9 Agentes SQL (`SQLDatabaseToolkit`) para las preguntas exploratorias; **base en solo lectura**
+- [x] 2.10 MCP `mcp_weather_server` con `MultiServerMCPClient`; salida resumida; pronóstico → ventas de la semana que viene. Si falla: respaldo con el CSV, documentado en el informe
+- [x] 2.11 Mínimo privilegio: cada agente accede solo a los datos y documentos de su área
+- [x] 2.12 Rechazo de las preguntas fuera de alcance
+- [x] 2.13 Tiempo de punta a punta con `time.perf_counter()`, visible en el detalle de la app
+- [x] 2.14 Consultas de prueba 1 a 8 + **al menos 2 propias** (p. ej., que combinen especialistas o un caso límite) → propias: 9 (supply + marketing), 10 (políticas + people), 11 (borrar datos). Corrida oficial 21/11
 - [ ] 2.15 (Opcional) A2A con al menos un especialista
 
 ## Patrones de las prácticas a replicar
@@ -131,8 +131,8 @@ La `GROQ_API_KEY` se toma de `MiM/AIAG/.env`: `load_dotenv()` sube por las carpe
 | 1. Exploración y modelos | ✅ 18/11 (falta que Emiliano lo revise): `etapa2/preparacion.py` + `entrenar_modelos.py` → `modelos/attrition.joblib`, `ventas.joblib`, `metricas.json`. Hallazgos en `informe/notas_modelos.md`. Gráficos en la fase 5 |
 | 2. Etapa 1 | ✅ 20/11, validada por Emiliano en la app: corridas oficiales 1 a 3 destaparon E1-22 a E1-29; la final (`e1_oficial_v4.log`) aprobó las 4 consultas y rechazó las 2 fuera de alcance, pero el push y el WhatsApp se rehicieron por E1-30 y E1-31 (`e1_oficial_v5.log` la 3, `e1_oficial_v6.log` la 4, 20/11 17:01 UTC). CSV = 8 originales + 4 piezas (respaldo `csv_e1_oficial_v6.csv`). |
 | 3. Etapa 2 | funcionando (20/11), falta la corrida oficial de las 11 y la validación de Emiliano en la app. Primera ronda con Groq (logs `e2_*.log`). Bien, contra las referencias: 2 manual, 3 tasas (40,0 % Atención al cliente, 43,1 % CD Córdoba), 4 factores + 122→52, 5 Electro 179.728 / AMBA 74.894 / AMBA total 198.133, 6 cobre (−27,3 % aires, −24,4 % Electro, extrapola), 7 Cuyo 100 u (82-122, MCP), 8 Mundial rechazado, 10 manual + capacitaciones 1,40 vs 1,67, 11 borrar → «no puedo borrar». 1 Instagram aprobado y guardado en el CSV de la etapa 2. Arreglos E2-13 a E2-21 (abajo). 9 (tercera corrida, 23:24 UTC): recomienda AMBA (422 u), descarta Patagonia por extrapolar, push «Eficiencia que refresca» sin datos inventados, aprobado y guardado; 81,6 s, 10 llamadas, ~18.900 tokens; supply y marketing en vueltas separadas. Detalle menor: la «idea» de la pieza dice «mantén» (no se publica). Corrida oficial 21/11 14:52-15:05 UTC (`e2_oficial.log`, ~90K tokens): bien 1-8 y 10; la 11 salió con el rechazo genérico. Arreglos E2-22 a E2-25 y re-corrida de 2, 4, 9, 10 y 11 (`e2_oficial_b.log`, ~42K): todas bien en contenido; la 9 y la 10 perdían partes en el resumen del orquestador → E2-26 (probado sobre los logs, sin re-correr). CSV de la etapa 2: 8 originales + Instagram de la 1 (14:53) + push de la 9 «Aires eficientes para tu hogar» (15:14). Falta: validación de Emiliano en la app (con cupo o key de un compañero) |
-| 4. Pruebas | pendiente |
-| 5. Informe (Google Doc → PDF) y entrega | pendiente |
+| 4. Pruebas | en curso: corrida oficial de la etapa 2 hecha (21/11) y tabla de tiempos lista (abajo); faltan la validación de Emiliano en la app, el CSV consolidado y las capturas |
+| 5. Informe (Google Doc → PDF) y entrega | borrador actualizado 21/11 (resumen, decisiones hasta E1-31 y E2-27, figuras 3 y 4, resultados y tiempos, consulta 11, limitaciones, anexo A.1); faltan: que Emiliano lo lea, recortar a 10 páginas, capturas (A.2), carátula, A2A o sacar la sección 7, PDF y zip final |
 
 ## Verificado contra los datos (2026-11-18)
 

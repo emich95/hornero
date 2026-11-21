@@ -5,7 +5,7 @@ digraph etapa2 {
 
   preg  [label="Pregunta del usuario\n(el código mide el tiempo de punta a punta)", fillcolor="#ffffff", style="rounded"];
   orq   [label="Orquestador (LLM)\ntools: los 4 especialistas\nno accede a ningún dato", fillcolor="#dbe8f7"];
-  cierre [label="Control final (código)\nsi no delegó en nadie: mensaje de rechazo\nsi recortó la pieza: agrega la original", fillcolor="#eeeeee"];
+  cierre [label="Control final (código)\nsi no delegó en nadie: rechazo\n(o «solo lectura» si pedía borrar datos)\nsi recortó la pieza: agrega la original\nsi faltan números: van los especialistas", fillcolor="#eeeeee"];
   resp  [label="Respuesta + detalle\n(pasos, llamadas, tokens, tiempo)", fillcolor="#ffffff", style="rounded"];
 
   mkt   [label="Marketing\ngrafo de la etapa 1\n(3 agentes + código)", fillcolor="#dbe8f7"];
@@ -26,7 +26,7 @@ digraph etapa2 {
   dcsv  [label="pronostico_clima.csv\n(respaldo si el MCP falla)", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
 
   preg -> orq;
-  orq -> mkt;
+  orq -> mkt [label=" pedido sin datos\n que el usuario no dio\n (control en código)", fontsize=8];
   orq -> pol;
   orq -> ppl;
   orq -> sup;

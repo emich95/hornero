@@ -1,0 +1,88 @@
+{
+ "pdf": "manual_politicas_rrhh.pdf",
+ "md5_pdf": "ac5a2679d5c249eb244ff3f103fba3ed",
+ "modelo": "paraphrase-multilingual-MiniLM-L12-v2",
+ "armado": "2026-11-18T19:07:09",
+ "chunks": [
+  {
+   "seccion": "Introducción",
+   "texto": "[Introducción]\nHornero: Manual de políticas de Recursos Humanos Versión 2026. Aplica a todos los colaboradores de Hornero S.A. en oficinas centrales, centros de distribución y equipos comerciales."
+  },
+  {
+   "seccion": "1. Trabajo híbrido > 1.1 Alcance",
+   "texto": "[1. Trabajo híbrido > 1.1 Alcance]\nEl esquema híbrido aplica a los roles de oficina: Tecnología, Marketing, Finanzas, Atención al Cliente (back office), RRHH y Compras. Los roles operativos de los centros de distribución y de última milla son presenciales."
+  },
+  {
+   "seccion": "1. Trabajo híbrido > 1.2 Días de trabajo remoto",
+   "texto": "[1. Trabajo híbrido > 1.2 Días de trabajo remoto]\n• Los roles de oficina pueden trabajar hasta 3 días por semana en forma remota.\n• Martes y jueves son días presenciales obligatorios para todos los equipos de oficina (\"días de equipo\").\n• Durante los primeros 3 meses desde el ingreso, el colaborador trabaja de forma presencial al menos 4 días por semana.\n• El líder puede pedir presencialidad adicional para eventos, capacitaciones o cierres, con al menos\n48 horas de aviso."
+  },
+  {
+   "seccion": "1. Trabajo híbrido > 1.3 Trabajo desde otra ciudad",
+   "texto": "[1. Trabajo híbrido > 1.3 Trabajo desde otra ciudad]\nSe puede trabajar desde otra ciudad del país hasta 20 días hábiles por año, con aprobación del líder. No se permite trabajar desde el exterior, salvo autorización expresa de RRHH."
+  },
+  {
+   "seccion": "1. Trabajo híbrido > 1.4 Horario de conexión",
+   "texto": "[1. Trabajo híbrido > 1.4 Horario de conexión]\nEl horario núcleo de conexión es de 10 a 16 h. Fuera de ese horario se respeta el derecho a la desconexión: nadie está obligado a responder mensajes después de las 19 h ni durante los fines de semana, salvo guardias previamente acordadas."
+  },
+  {
+   "seccion": "2. Reintegro de gastos > 2.1 Gastos de conectividad (internet)",
+   "texto": "[2. Reintegro de gastos > 2.1 Gastos de conectividad (internet)]\n• Los colaboradores con esquema híbrido reciben un reintegro mensual de internet de $25.000.\n• Para cobrarlo, se carga la factura del servicio a nombre del colaborador o de un integrante de su hogar en el portal \"Mi Hornero\" → Gastos → Conectividad antes del día 5 de cada mes.\n• El reintegro se paga junto con el sueldo del mes siguiente.\n• Si no se presenta la factura en dos meses seguidos, el beneficio se suspende hasta que se regularice."
+  },
+  {
+   "seccion": "2. Reintegro de gastos > 2.2 Equipamiento para trabajo remoto",
+   "texto": "[2. Reintegro de gastos > 2.2 Equipamiento para trabajo remoto]\nPor única vez, cada colaborador con esquema híbrido puede pedir un kit de home office (silla ergonómica o monitor, a elección) desde \"Mi Hornero\" → Beneficios. El equipamiento queda en comodato y se devuelve si termina la relación laboral."
+  },
+  {
+   "seccion": "2. Reintegro de gastos > 2.3 Viáticos y viajes de trabajo",
+   "texto": "[2. Reintegro de gastos > 2.3 Viáticos y viajes de trabajo]\n• Los viajes se aprueban con anticipación por el líder y se gestionan con la agencia de viajes corporativa.\n• Comidas: tope de $30.000 por día en viajes nacionales.\n• Traslados: se reintegran taxis y aplicaciones de transporte con comprobante. Si se usa el auto propio, se reintegran $350 por kilómetro.\n• Alojamiento: solo en los hoteles del convenio corporativo.\n• Los comprobantes se cargan en \"Mi Hornero\" → Gastos → Viáticos dentro de los 10 días corridos posteriores al viaje."
+  },
+  {
+   "seccion": "2. Reintegro de gastos > 2.4 Gastos no reintegrables",
+   "texto": "[2. Reintegro de gastos > 2.4 Gastos no reintegrables]\nBebidas alcohólicas, multas de tránsito, gastos personales, propinas superiores al 10% y cualquier gasto sin comprobante."
+  },
+  {
+   "seccion": "3. Capacitación y desarrollo > 3.1 Presupuesto individual",
+   "texto": "[3. Capacitación y desarrollo > 3.1 Presupuesto individual]\nCada colaborador con más de 6 meses de antigüedad tiene un presupuesto anual de capacitación de $600.000 para cursos, certificaciones o congresos relacionados con su rol."
+  },
+  {
+   "seccion": "3. Capacitación y desarrollo > 3.2 Cómo pedir una capacitación",
+   "texto": "[3. Capacitación y desarrollo > 3.2 Cómo pedir una capacitación]\n1 Elegir el curso y pedir la aprobación del líder.\n2 Cargar la solicitud en \"Mi Hornero\" → Desarrollo, con el programa y el costo.\n3 RRHH responde en un máximo de 5 días hábiles.\n4 Una vez aprobado, Hornero paga directamente al proveedor o reintegra el gasto contra factura."
+  },
+  {
+   "seccion": "3. Capacitación y desarrollo > 3.3 Posgrados",
+   "texto": "[3. Capacitación y desarrollo > 3.3 Posgrados]\nPara posgrados (especializaciones, maestrías) Hornero cubre hasta el 50% del costo con un compromiso de permanencia de 18 meses desde que termina la cursada. Si el colaborador se va antes, devuelve la parte proporcional."
+  },
+  {
+   "seccion": "3. Capacitación y desarrollo > 3.4 Horas de estudio",
+   "texto": "[3. Capacitación y desarrollo > 3.4 Horas de estudio]\nLos colaboradores que cursan carreras de grado o posgrado tienen 2 días de licencia por examen, con un máximo de 10 días por año."
+  },
+  {
+   "seccion": "4. Licencias especiales",
+   "texto": "[4. Licencias especiales]\n- Licencia: Nacimiento o adopción (persona no gestante) | Duración: 15 días corridos\n- Licencia: Nacimiento o adopción (persona gestante) | Duración: 120 días corridos, más 30 días opcionales con reincorporación gradual\n- Licencia: Matrimonio o unión convivencial | Duración: 10 días corridos\n- Licencia: Mudanza | Duración: 2 días hábiles, una vez por año\n- Licencia: Fallecimiento de un familiar directo | Duración: 5 días corridos\n- Licencia: Día de cumpleaños | Duración: 1 día libre en la semana del cumpleaños\n- Licencia: Trámites personales | Duración: 2 días hábiles por año\n- Licencia: Cuidado de familiar enfermo | Duración: Hasta 10 días hábiles por año, con certificado\nLas licencias se piden en \"Mi Hornero\" → Licencias, con la documentación correspondiente."
+  },
+  {
+   "seccion": "5. Beneficios",
+   "texto": "[5. Beneficios]\n• Descuento para colaboradores: 25% en todos los productos de Hornero (40% en la semana del aniversario de la empresa), con un tope mensual de $400.000 de compra.\n• Prepaga: plan corporativo para el colaborador y su grupo familiar primario.\n• Bienestar: reintegro de hasta $40.000 por mes en gimnasio o actividades deportivas.\n• Almuerzo: vianda diaria en los centros de distribución y tarjeta de almuerzo de $8.000 por día presencial en oficinas.\n• Guardería: reintegro de hasta $150.000 por mes por cada hijo menor de 4 años.\n• Día de la familia: un viernes libre por semestre."
+  },
+  {
+   "seccion": "6. Código de conducta > 6.1 Principios",
+   "texto": "[6. Código de conducta > 6.1 Principios]\nRespeto, integridad, confidencialidad y cuidado. No se tolera ninguna forma de discriminación, acoso o violencia, sea por género, orientación sexual, edad, origen, religión, discapacidad o cualquier otra condición."
+  },
+  {
+   "seccion": "6. Código de conducta > 6.2 Conflictos de interés",
+   "texto": "[6. Código de conducta > 6.2 Conflictos de interés]\nCualquier relación con proveedores, transportistas o clientes que pueda generar un conflicto de interés debe declararse a RRHH. No se aceptan regalos de proveedores por más de $50.000."
+  },
+  {
+   "seccion": "6. Código de conducta > 6.3 Uso de datos de clientes",
+   "texto": "[6. Código de conducta > 6.3 Uso de datos de clientes]\nLos datos de clientes se usan solo para la tarea asignada. Está prohibido compartirlos por canales personales, descargarlos en dispositivos no corporativos o usarlos con herramientas de IA no autorizadas por Tecnología."
+  },
+  {
+   "seccion": "6. Código de conducta > 6.4 Canal de denuncias",
+   "texto": "[6. Código de conducta > 6.4 Canal de denuncias]\nLas denuncias se hacen en forma anónima por la Línea Ética Hornero (formulario web o teléfono 0800-HORNERO). Están prohibidas las represalias contra quien denuncie de buena fe."
+  },
+  {
+   "seccion": "7. Contacto con RRHH",
+   "texto": "[7. Contacto con RRHH]\n• Portal: \"Mi Hornero\" → Consultas.\n• Email: personas@hornero.com.ar\n• Cada área tiene un HR Business Partner asignado, que figura en el portal."
+  }
+ ]
+}

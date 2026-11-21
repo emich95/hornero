@@ -1,0 +1,46 @@
+digraph etapa1 {
+  graph [rankdir=TB, fontname="DejaVu Sans", fontsize=11, nodesep=0.35, ranksep=0.32, bgcolor="white", pad=0.2];
+  node  [fontname="DejaVu Sans", fontsize=10, style="rounded,filled", shape=box, color="#555555", penwidth=1];
+  edge  [fontname="DejaVu Sans", fontsize=9, color="#555555", arrowsize=0.7];
+
+  pedido   [label="Pedido en lenguaje natural\n(+ fecha de hoy, la pone el código)", fillcolor="#ffffff", shape=box, style="rounded"];
+  plan     [label="1. Planificador (LLM)\ntools: leer_historial, buscar_guia\nsalida: brief estructurado", fillcolor="#dbe8f7"];
+  ctx      [label="2. Preparar contexto (código)\nlimpia el brief, elige secciones de la guía\ny 2 piezas de ejemplo del canal", fillcolor="#eeeeee"];
+  red      [label="3. Redactor (LLM, sin tools)\nrecibe brief + guía + ejemplos\nsalida: pieza estructurada", fillcolor="#dbe8f7"];
+  val      [label="4. Validar (código)\nlargos, emojis, hashtags, voseo, legales,\nprohibidas, datos inventados, parecido", fillcolor="#eeeeee"];
+  rev      [label="5. Revisor (LLM, sin tools)\nrecibe pieza + brief sin historial\nchecklist de 4 puntos", fillcolor="#dbe8f7"];
+  guardar  [label="6. Guardar (código)\ntool guardar_pieza", fillcolor="#eeeeee"];
+  resp     [label="Respuesta + detalle de cada paso", fillcolor="#ffffff", style="rounded"];
+
+  guia     [label="guia_de_marca.pdf\níndice FAISS por sección\n(solo lectura)", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  csv      [label="contenidos_aprobados.csv\n(lectura; escritura solo\ndesde el paso 6)", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+
+  pedido -> plan;
+  plan -> ctx  [label=" dentro del alcance"];
+  plan -> resp [label=" fuera de alcance", style=dashed];
+  ctx -> red -> val;
+  val -> red   [label=" errores\n(hasta 4 versiones)", style=dashed, constraint=false];
+  val -> rev   [label=" sin errores"];
+  rev -> red   [label=" rechazo\n(hasta 2)", style=dashed, constraint=false];
+  rev -> guardar [label=" aprobada (todo el\n checklist en true)"];
+  guardar -> resp;
+  val -> resp  [label=" se agotaron los intentos:\n pieza sin guardar\n + qué falta corregir", style=dotted];
+  rev -> resp  [style=dotted];
+
+  guia -> plan [style=dotted, arrowhead=none];
+  guia -> ctx  [style=dotted, arrowhead=none];
+  csv  -> plan [style=dotted, arrowhead=none];
+  csv  -> ctx  [style=dotted, arrowhead=none];
+  guardar -> csv [style=dotted, label=" agrega 1 fila"];
+
+  {rank=same; plan; guia}
+  {rank=same; ctx; csv}
+
+  subgraph cluster_ref {
+    label="Referencias"; fontsize=9; color="#bbbbbb"; style="rounded";
+    r1 [label="Agente LLM", fillcolor="#dbe8f7", fontsize=8];
+    r2 [label="Paso de código", fillcolor="#eeeeee", fontsize=8];
+    r3 [label="Datos", shape=cylinder, style="filled", fillcolor="#fdf1d6", fontsize=8];
+    r1 -> r2 -> r3 [style=invis];
+  }
+}

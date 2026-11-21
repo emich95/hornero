@@ -1,0 +1,241 @@
+{
+  "generado": "2026-11-18T02:11:31",
+  "attrition": {
+    "elegido": "logistica",
+    "descartado": "lightgbm",
+    "comparacion": {
+      "logistica": {
+        "auc_cv_media": 0.7882,
+        "auc_cv_desvio": 0.0335,
+        "auc_test": 0.8142,
+        "umbral_0_5": {
+          "umbral": 0.5,
+          "precision": 0.6463,
+          "recall": 0.469,
+          "f1": 0.5436,
+          "pct_marcados": 20.5,
+          "vp": 53,
+          "fp": 29,
+          "fn": 60,
+          "vn": 258
+        },
+        "umbral_f1_max": {
+          "umbral": 0.33,
+          "precision": 0.5547,
+          "recall": 0.6726,
+          "f1": 0.608,
+          "pct_marcados": 34.25,
+          "vp": 76,
+          "fp": 61,
+          "fn": 37,
+          "vn": 226
+        }
+      },
+      "lightgbm": {
+        "auc_cv_media": 0.7493,
+        "auc_cv_desvio": 0.0382,
+        "auc_test": 0.7875,
+        "umbral_0_5": {
+          "umbral": 0.5,
+          "precision": 0.6071,
+          "recall": 0.4513,
+          "f1": 0.5178,
+          "pct_marcados": 21.0,
+          "vp": 51,
+          "fp": 33,
+          "fn": 62,
+          "vn": 254
+        },
+        "umbral_f1_max": {
+          "umbral": 0.32,
+          "precision": 0.5455,
+          "recall": 0.6903,
+          "f1": 0.6094,
+          "pct_marcados": 35.75,
+          "vp": 78,
+          "fp": 65,
+          "fn": 35,
+          "vn": 222
+        }
+      }
+    },
+    "importancia_permutacion_auc": {
+      "sueldo_vs_mercado_pct": 0.0596,
+      "satisfaccion_clima": 0.0549,
+      "meses_sin_aumento": 0.038,
+      "horas_extra_mes": 0.0251,
+      "antiguedad_anios": 0.0136,
+      "capacitaciones_ultimo_anio": 0.0128,
+      "distancia_km": 0.0049,
+      "area": 0.0042,
+      "ultima_evaluacion": 0.0028,
+      "nivel": 0.0015,
+      "modalidad": 0.0004,
+      "centro": -0.001
+    },
+    "efectos_numericos": {
+      "antiguedad_anios": {
+        "coef_estandarizado": -0.2632,
+        "desvio": 3.0481,
+        "odds_ratio_por_unidad": 0.9173,
+        "odds_ratio_por_desvio": 0.7686
+      },
+      "sueldo_vs_mercado_pct": {
+        "coef_estandarizado": -0.5633,
+        "desvio": 12.0842,
+        "odds_ratio_por_unidad": 0.9545,
+        "odds_ratio_por_desvio": 0.5694
+      },
+      "meses_sin_aumento": {
+        "coef_estandarizado": 0.5361,
+        "desvio": 10.6551,
+        "odds_ratio_por_unidad": 1.0516,
+        "odds_ratio_por_desvio": 1.7093
+      },
+      "horas_extra_mes": {
+        "coef_estandarizado": 0.4275,
+        "desvio": 8.3875,
+        "odds_ratio_por_unidad": 1.0523,
+        "odds_ratio_por_desvio": 1.5334
+      },
+      "distancia_km": {
+        "coef_estandarizado": 0.1935,
+        "desvio": 8.6486,
+        "odds_ratio_por_unidad": 1.0226,
+        "odds_ratio_por_desvio": 1.2135
+      },
+      "ultima_evaluacion": {
+        "coef_estandarizado": -0.134,
+        "desvio": 0.7007,
+        "odds_ratio_por_unidad": 0.8259,
+        "odds_ratio_por_desvio": 0.8746
+      },
+      "capacitaciones_ultimo_anio": {
+        "coef_estandarizado": -0.2969,
+        "desvio": 1.2408,
+        "odds_ratio_por_unidad": 0.7872,
+        "odds_ratio_por_desvio": 0.7431
+      },
+      "satisfaccion_clima": {
+        "coef_estandarizado": -0.5887,
+        "desvio": 0.7868,
+        "odds_ratio_por_unidad": 0.4732,
+        "odds_ratio_por_desvio": 0.555
+      }
+    },
+    "efectos_categoricos": {
+      "area": {
+        "Administración y Finanzas": -0.2804,
+        "Atención al cliente": 0.5435,
+        "Comercial y Marketing": -0.0786,
+        "Logística": -0.2879,
+        "Operaciones": -0.0416,
+        "Tecnología": 0.1264
+      },
+      "centro": {
+        "CD AMBA": 0.0856,
+        "CD Córdoba": 0.0727,
+        "CD Mendoza": 0.0604,
+        "CD Rosario": -0.1803,
+        "CD Tucumán": 0.1755,
+        "Oficina Central CABA": -0.2326
+      },
+      "nivel": {
+        "Junior": -0.1803,
+        "Líder": 0.1109,
+        "Semi Senior": 0.0635,
+        "Senior": -0.0129
+      },
+      "modalidad": {
+        "híbrido": -0.0129,
+        "presencial": 0.021,
+        "remoto": -0.0268
+      }
+    },
+    "chequeo_activos": {
+      "en_riesgo_activos_dentro_de_muestra": 122,
+      "en_riesgo_activos_fuera_de_muestra": 122,
+      "prob_media_activos_dentro": 0.2127,
+      "prob_media_activos_fuera": 0.2155
+    }
+  },
+  "ventas": {
+    "elegido": "lineal_log_interacciones_por_categoria",
+    "descartados": [
+      "lineal_log_todas_las_interacciones",
+      "lightgbm"
+    ],
+    "split_temporal": {
+      "train_hasta": "2026-01-26",
+      "semanas_train": 160,
+      "semanas_test": 40
+    },
+    "comparacion_test": {
+      "lineal_log_interacciones_por_categoria": {
+        "mae": 22.827,
+        "rmse": 41.202,
+        "mape_pct": 12.176,
+        "r2": 0.98
+      },
+      "lineal_log_todas_las_interacciones": {
+        "mae": 23.089,
+        "rmse": 41.674,
+        "mape_pct": 12.201,
+        "r2": 0.98
+      },
+      "lightgbm": {
+        "mae": 26.467,
+        "rmse": 46.91,
+        "mape_pct": 18.567,
+        "r2": 0.975
+      }
+    },
+    "mape_pct_por_categoria_test": {
+      "Aires acondicionados": 17.3,
+      "Calefacción": 12.8,
+      "Cocina": 9.2,
+      "Electro": 8.5,
+      "Jardín": 13.7,
+      "Muebles": 11.6
+    },
+    "efectos_legibles": {
+      "Aires acondicionados": {
+        "pct_por_1_grado": 18.4,
+        "pct_por_10_mm_lluvia": -0.03,
+        "pct_por_1000_usd_cobre": -15.06
+      },
+      "Calefacción": {
+        "pct_por_1_grado": -14.74,
+        "pct_por_10_mm_lluvia": 0.24,
+        "pct_por_1000_usd_cobre": -1.7
+      },
+      "Cocina": {
+        "pct_por_1_grado": 0.03,
+        "pct_por_10_mm_lluvia": 0.2,
+        "pct_por_1000_usd_cobre": 0.02
+      },
+      "Electro": {
+        "pct_por_1_grado": 0.04,
+        "pct_por_10_mm_lluvia": -0.25,
+        "pct_por_1000_usd_cobre": -13.56
+      },
+      "Jardín": {
+        "pct_por_1_grado": 6.12,
+        "pct_por_10_mm_lluvia": -11.35,
+        "pct_por_1000_usd_cobre": -0.87
+      },
+      "Muebles": {
+        "pct_por_1_grado": -0.1,
+        "pct_por_10_mm_lluvia": 0.08,
+        "pct_por_1000_usd_cobre": 0.99
+      }
+    },
+    "cobre_ultimo": 9470.0,
+    "rango_cobre_historico": [
+      7925.0,
+      11160.0
+    ],
+    "desvio_residuo_log": 0.1579,
+    "factor_correccion_log": 1.0123
+  }
+}

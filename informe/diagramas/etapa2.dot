@@ -1,0 +1,48 @@
+digraph etapa2 {
+  graph [rankdir=LR, fontname="DejaVu Sans", fontsize=11, nodesep=0.22, ranksep=0.35, bgcolor="white", pad=0.2, newrank=true];
+  node  [fontname="DejaVu Sans", fontsize=10, style="rounded,filled", shape=box, color="#555555", penwidth=1];
+  edge  [fontname="DejaVu Sans", fontsize=9, color="#555555", arrowsize=0.7];
+
+  preg  [label="Pregunta del usuario\n(el código mide el tiempo de punta a punta)", fillcolor="#ffffff", style="rounded"];
+  orq   [label="Orquestador (LLM)\ntools: los 4 especialistas\nno accede a ningún dato", fillcolor="#dbe8f7"];
+  cierre [label="Control final (código)\nsi no delegó en nadie: mensaje de rechazo\nsi recortó la pieza: agrega la original", fillcolor="#eeeeee"];
+  resp  [label="Respuesta + detalle\n(pasos, llamadas, tokens, tiempo)", fillcolor="#ffffff", style="rounded"];
+
+  mkt   [label="Marketing\ngrafo de la etapa 1\n(3 agentes + código)", fillcolor="#dbe8f7"];
+  pol   [label="Políticas de RRHH (LLM)\ntool: buscar_politica", fillcolor="#dbe8f7"];
+  ppl   [label="People analytics (LLM)\npredecir_riesgo_attrition\nexplicar_factores_attrition\nsimular_escenario_attrition\nconsultar_datos_empleados", fillcolor="#dbe8f7"];
+  sup   [label="Supply chain (LLM)\npredecir_ventas\nexplicar_factores_ventas\nsimular_escenario_ventas\nprever_ventas_semana\npronostico_semana\nconsultar_datos_ventas", fillcolor="#dbe8f7"];
+
+  sqle  [label="Agente SQL empleados (LLM)\nsql_db_schema, sql_db_query", fillcolor="#dbe8f7"];
+  sqlv  [label="Agente SQL ventas (LLM)\nsql_db_schema, sql_db_query", fillcolor="#dbe8f7"];
+  mcp   [label="Server MCP de clima (stdio)\nsolo get_weather_byDateTimeRange;\nel código resume ~100.000 caracteres\na 4 números por región", fillcolor="#eeeeee"];
+
+  dmkt  [label="guia_de_marca.pdf (FAISS)\ncontenidos_aprobados.csv", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  dpol  [label="manual_politicas_rrhh.pdf\níndice FAISS por subsección", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  matt  [label="modelo de attrition\n(logística, .joblib)", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  demp  [label="empleados.db\nsolo lectura", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  mven  [label="modelo de ventas\n(lineal sobre log, .joblib)", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  dven  [label="ventas.db\nsolo lectura", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+  dcsv  [label="pronostico_clima.csv\n(respaldo si el MCP falla)", shape=cylinder, style="filled", fillcolor="#fdf1d6"];
+
+  preg -> orq;
+  orq -> mkt;
+  orq -> pol;
+  orq -> ppl;
+  orq -> sup;
+  orq -> cierre;
+  cierre -> resp;
+
+  mkt -> dmkt [style=dotted, arrowhead=none];
+  pol -> dpol [style=dotted, arrowhead=none];
+  ppl -> sqle; ppl -> matt [style=dotted, arrowhead=none];
+  sqle -> demp [style=dotted, arrowhead=none];
+  sup -> sqlv; sup -> mcp; sup -> mven [style=dotted, arrowhead=none];
+  sqlv -> dven [style=dotted, arrowhead=none];
+  mcp -> dcsv [style=dashed, label=" si falla\n 2 veces"];
+
+  {rank=same; preg; orq; cierre; resp}
+  {rank=same; mkt; pol; ppl; sup}
+  {rank=same; dmkt; dpol; sqle; matt; sqlv; mcp; mven}
+  {rank=same; demp; dven; dcsv}
+}
